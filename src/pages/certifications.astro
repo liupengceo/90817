@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Certifications" description="ISO 9001 certified. Type test reports. Third-party inspection. Download our certification documents.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <p class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-2">Quality Assurance</p>
+    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Certifications & Testing</h1>
+    <p class="text-steel-500 text-lg mb-12 max-w-3xl">Our towers are backed by recognized certifications and third-party test reports. Download documents below.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        { title: 'ISO 9001:2015', desc: 'Quality Management System', file: '[PDF link]' },
+        { title: 'ISO 14001', desc: 'Environmental Management', file: '[PDF link]' },
+        { title: 'Type Test Report', desc: 'Tower structural testing (CEPRI)', file: '[PDF link]' },
+        { title: 'Hot-Dip Galvanizing', desc: 'ISO 1461 / ASTM A123 compliance', file: '[PDF link]' },
+        { title: 'Material Certificates', desc: 'Mill test reports for steel supply', file: '[PDF link]' },
+        { title: 'Welding Qualification', desc: 'AWS / EN certified welders', file: '[PDF link]' },
+      ].map(cert => (
+        <div class="p-6 rounded-xl border border-steel-100 hover:border-brand-200 transition-colors">
+          <h3 class="font-bold text-lg mb-2">{cert.title}</h3>
+          <p class="text-steel-500 text-sm mb-4">{cert.desc}</p>
+          <span class="text-brand-500 text-sm font-semibold">{cert.file}</span>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-steel-500 mb-4">Need a specific certification for your tender?</p>
+      <a href="/quote/" class="inline-flex items-center px-6 py-3 bg-brand-500 text-white font-semibold rounded-lg hover:bg-brand-600 transition-colors">Request Documents →</a>
+    </div>
+  </section>
+</BaseLayout>

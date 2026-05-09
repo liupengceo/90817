@@ -1,0 +1,30 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Projects" description="Transmission tower projects delivered to SEA, Middle East, Africa & Latin America.">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <p class="text-brand-500 font-semibold text-sm uppercase tracking-wider mb-2">Track Record</p>
+    <h1 class="text-4xl lg:text-5xl font-bold mb-6">Our Projects</h1>
+    <p class="text-steel-500 text-lg mb-12 max-w-3xl">Transmission tower projects delivered across multiple continents.</p>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+      {[1,2,3,4,5,6].map(i => (
+        <div class="rounded-xl border border-steel-100 overflow-hidden">
+          <div class="h-48 bg-steel-100 flex items-center justify-center text-steel-300 text-sm">[Project Photo #{i}]</div>
+          <div class="p-5">
+            <p class="text-xs text-brand-500 font-semibold uppercase mb-1">[Country] · [Year]</p>
+            <h3 class="font-bold text-lg mb-2">[Project Name]</h3>
+            <p class="text-xs text-steel-400">[XXX] kV · [XX] towers · [X,XXX] MT</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <div class="bg-steel-50 rounded-2xl p-8 text-center">
+      <h2 class="text-2xl font-bold mb-3">Your Project Could Be Next</h2>
+      <p class="text-steel-500 mb-6">Tell us your requirements for a technical proposal with relevant references.</p>
+      <a href="/quote/" class="inline-flex items-center px-8 py-4 bg-brand-500 text-white font-bold rounded-lg hover:bg-brand-600 transition-colors">Start Your Inquiry →</a>
+    </div>
+  </section>
+</BaseLayout>
