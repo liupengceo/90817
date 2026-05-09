@@ -1,0 +1,9 @@
+# Cloudflare Pages deployment configuration
+# This file is optional — CF Pages auto-detects Astro.
+# Kept here for documentation and future Workers routes.
+
+name = "90817-site"
+compatibility_date = "2025-01-01"
+
+# Pages will use the /dist output from `astro build`
+# No workers needed for static site (inquiry form via Formspree initially)
