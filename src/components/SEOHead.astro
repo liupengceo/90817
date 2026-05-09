@@ -1,0 +1,47 @@
+---
+/**
+ * SEO component: JSON-LD Organization schema + Open Graph tags.
+ * Include this in BaseLayout <head> for site-wide structured data.
+ */
+interface Props {
+  title: string;
+  description: string;
+  url?: string;
+  image?: string;
+}
+
+const { title, description, url = Astro.url.href, image = '/og-default.png' } = Astro.props;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HB Power Tower Co., Ltd.",
+  "url": "https://90817.com",
+  "logo": "https://90817.com/logo.png",
+  "description": "Steel transmission tower manufacturer for power grid projects worldwide.",
+  "email": "sales@90817.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CN",
+    "addressRegion": "Hebei"
+  },
+  "areaServed": ["Southeast Asia", "Middle East", "Africa", "Latin America"],
+  "knowsAbout": ["Transmission Towers", "Lattice Towers", "Monopole Towers", "Hot-Dip Galvanizing", "Power Line Construction"]
+};
+---
+
+<!-- Open Graph -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={url} />
+<meta property="og:image" content={image} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="HB Power Tower" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<!-- JSON-LD Organization (site-wide) -->
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
