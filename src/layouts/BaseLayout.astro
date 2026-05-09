@@ -1,0 +1,86 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'HB Power Tower - Transmission Tower Manufacturer for Southeast Asia, Middle East, Africa & Latin America' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <title>{title} | HB Power Tower</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-steel-100">
+      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <span class="text-xl font-bold text-steel-900">HB Power Tower</span>
+        </a>
+        <div class="hidden md:flex items-center gap-8 text-sm font-medium text-steel-600">
+          <a href="/products/transmission-towers/" class="hover:text-brand-500 transition-colors">Products</a>
+          <a href="/capabilities/engineering-design/" class="hover:text-brand-500 transition-colors">Capabilities</a>
+          <a href="/projects/" class="hover:text-brand-500 transition-colors">Projects</a>
+          <a href="/certifications/" class="hover:text-brand-500 transition-colors">Certifications</a>
+          <a href="/about/company/" class="hover:text-brand-500 transition-colors">About</a>
+          <a href="/contact/" class="hover:text-brand-500 transition-colors">Contact</a>
+        </div>
+        <a href="/quote/" class="hidden md:inline-flex items-center px-4 py-2 bg-brand-500 text-white text-sm font-semibold rounded-lg hover:bg-brand-600 transition-colors">
+          Get a Quote
+        </a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer class="bg-steel-900 text-steel-300 mt-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-white font-bold text-lg mb-4">HB Power Tower</h3>
+            <p class="text-sm">Transmission tower manufacturer. ISO 9001 certified. Serving power grid projects worldwide since [YEAR].</p>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Products</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/products/transmission-towers/" class="hover:text-white">Transmission Towers</a></li>
+              <li><a href="/products/substation-structures/" class="hover:text-white">Substation Structures</a></li>
+              <li><a href="/products/also-available/communication-towers/" class="hover:text-white">Communication Towers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Company</h4>
+            <ul class="space-y-2 text-sm">
+              <li><a href="/about/company/" class="hover:text-white">About Us</a></li>
+              <li><a href="/about/factory/" class="hover:text-white">Factory</a></li>
+              <li><a href="/certifications/" class="hover:text-white">Certifications</a></li>
+              <li><a href="/projects/" class="hover:text-white">Projects</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-white font-semibold mb-3">Contact</h4>
+            <ul class="space-y-2 text-sm">
+              <li>Email: <a href="mailto:sales@90817.com" class="hover:text-white">sales@90817.com</a></li>
+              <li><a href="/quote/" class="hover:text-white">Request a Quote →</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-steel-700 mt-8 pt-8 text-sm text-center">
+          &copy; {new Date().getFullYear()} HB Power Tower Co., Ltd. All rights reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

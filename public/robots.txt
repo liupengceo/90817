@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://90817.com/sitemap-index.xml
